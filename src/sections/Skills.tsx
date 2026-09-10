@@ -1,23 +1,47 @@
+import type { IconType } from "react-icons";
+import { FaAws, FaDocker, FaJava } from "react-icons/fa";
+import {
+    SiJenkins,
+    SiKubernetes,
+    SiPostgresql,
+    SiPostman,
+    SiSpring,
+    SiSpringboot,
+} from "react-icons/si";
+
+const technologyIcons: Record<string, IconType> = {
+    Java: FaJava,
+    "Spring Framework": SiSpring,
+    "Spring Boot": SiSpringboot,
+    PostgreSQL: SiPostgresql,
+    Docker: FaDocker,
+    Kubernetes: SiKubernetes,
+    AWS: FaAws,
+    Jenkins: SiJenkins,
+    Postman: SiPostman,
+};
+
 const skillGroups = [
     {
         number: "01",
         title: "Backend",
-        description: "Backend development and application architecture.",
+        description: "Backend development and enterprise application architecture.",
         skills: [
             "Java",
+            "Spring Framework",
             "Spring Boot",
-            "Jakarta EE",
-            "REST APIs",
-            "JPA",
+            "Quarkus",
             "Hibernate",
+            "REST APIs",
         ],
     },
     {
         number: "02",
         title: "Databases",
-        description: "Relational data, persistence, and database migrations.",
+        description: "Relational databases, persistence, and schema management.",
         skills: [
             "PostgreSQL",
+            "Oracle Database",
             "SQL",
             "Liquibase",
         ],
@@ -25,7 +49,7 @@ const skillGroups = [
     {
         number: "03",
         title: "Cloud & DevOps",
-        description: "Containerization, deployment, and cloud environments.",
+        description: "Containerization, deployment, CI/CD, and cloud environments.",
         skills: [
             "Docker",
             "Kubernetes",
@@ -39,8 +63,10 @@ const skillGroups = [
         title: "Testing",
         description: "Automated testing and API verification.",
         skills: [
+            "Unit Testing",
             "JUnit",
             "Mockito",
+            "API Testing",
             "Postman",
             "SoapUI",
         ],
@@ -48,7 +74,7 @@ const skillGroups = [
     {
         number: "05",
         title: "Security",
-        description: "Authentication and authorization concepts and technologies.",
+        description: "Authentication and authorization technologies and concepts.",
         skills: [
             "JWT",
             "OAuth2",
@@ -58,10 +84,11 @@ const skillGroups = [
     {
         number: "06",
         title: "Integration",
-        description: "Working with application and service integrations.",
+        description: "Backend services and enterprise system integrations.",
         skills: [
-            "REST",
+            "RESTful Web Services",
             "SOAP",
+            "Microservices",
         ],
     },
 ];
@@ -110,14 +137,26 @@ export default function Skills() {
                         </div>
 
                         <div className="mt-6 flex flex-wrap gap-2">
-                            {group.skills.map((skill) => (
-                                <span
-                                    key={skill}
-                                    className="rounded-md border border-slate-800 bg-slate-900/40 px-3 py-1.5 text-sm text-slate-300"
-                                >
-                  {skill}
-                </span>
-                            ))}
+                            {group.skills.map((skill) => {
+                                const TechnologyIcon = technologyIcons[skill];
+
+                                return (
+                                    <span
+                                        key={skill}
+                                        className="inline-flex items-center gap-2 rounded-lg border border-slate-800 bg-slate-900/40 px-3 py-2 text-sm text-slate-300 transition hover:border-slate-700 hover:bg-slate-900"
+                                    >
+                    {TechnologyIcon && (
+                        <TechnologyIcon
+                            size={17}
+                            className="text-sky-400"
+                            aria-hidden="true"
+                        />
+                    )}
+
+                                        {skill}
+                  </span>
+                                );
+                            })}
                         </div>
                     </article>
                 ))}
