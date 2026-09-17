@@ -16,6 +16,7 @@ export const projects: Project[] = [
         ],
         github: "https://github.com/nikolaychv/mechano",
         featured: true,
+        icon: "automotive",
     },
     {
         title: "Mechano Auth Service",
@@ -32,5 +33,6 @@ export const projects: Project[] = [
         ],
         github: "https://github.com/nikolaychv/mechano-auth-service",
         featured: false,
+        icon: "security",
     },
 ];

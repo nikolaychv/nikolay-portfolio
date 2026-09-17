@@ -1,3 +1,5 @@
+export type ProjectIcon = "automotive" | "security";
+
 export type Project = {
     title: string;
     subtitle: string;
@@ -5,4 +7,5 @@ export type Project = {
     technologies: string[];
     github: string;
     featured: boolean;
+    icon: ProjectIcon;
 };
