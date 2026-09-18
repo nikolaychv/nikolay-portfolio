@@ -3,6 +3,8 @@
 :root {
   --background: #0a0f1c;
   --foreground: #f5f7fa;
+  --surface: #0d1424;
+  --border: #1e293b;
 }
 
 html {
@@ -13,4 +15,50 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
+}
+
+section[id] {
+  scroll-margin-top: 110px;
+}
+
+section[id]:nth-of-type(even) {
+  position: relative;
+}
+
+section[id]:nth-of-type(even)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+          linear-gradient(
+                  to bottom,
+                  transparent,
+                  rgba(15, 23, 42, 0.22),
+                  transparent
+          );
+}
+
+section[id]::after {
+  content: "";
+  display: block;
+  width: min(72rem, calc(100% - 3rem));
+  height: 1px;
+  margin: 6rem auto 0;
+  background:
+          linear-gradient(
+                  to right,
+                  transparent,
+                  rgba(51, 65, 85, 0.45),
+                  transparent
+          );
+}
+
+section[id]:last-of-type::after {
+  display: none;
+}
+
+::selection {
+  background: rgba(14, 165, 233, 0.35);
+  color: #ffffff;
 }
