@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import About from "@/sections/About";
+import Certificates from "@/sections/Certificates";
 import Contact from "@/sections/Contact";
 import Education from "@/sections/Education";
 import Experience from "@/sections/Experience";
@@ -20,6 +21,7 @@ export default function Home() {
                 <Skills />
                 <Projects />
                 <Education />
+                <Certificates />
                 <Contact />
             </main>
 
