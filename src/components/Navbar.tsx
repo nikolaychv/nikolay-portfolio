@@ -14,6 +14,11 @@ const navigation = [
         href: "#certificates",
         id: "certificates",
     },
+    {
+        label: "Volunteering",
+        href: "#volunteering",
+        id: "volunteering",
+    },
     { label: "Contact", href: "#contact", id: "contact" },
 ];
 
@@ -64,7 +69,7 @@ export default function Navbar() {
                         NV
                     </a>
 
-                    <div className="hidden items-center gap-1 md:flex">
+                    <div className="hidden items-center gap-1 lg:flex">
                         {navigation.map((item) => {
                             const isActive = activeSection === item.id;
 
@@ -89,14 +94,14 @@ export default function Navbar() {
                         onClick={() => setIsOpen((current) => !current)}
                         aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
                         aria-expanded={isOpen}
-                        className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-800 text-slate-300 transition hover:border-slate-700 hover:bg-slate-900 hover:text-white md:hidden"
+                        className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-800 text-slate-300 transition hover:border-slate-700 hover:bg-slate-900 hover:text-white lg:hidden"
                     >
                         {isOpen ? <X size={20} /> : <Menu size={20} />}
                     </button>
                 </div>
 
                 {isOpen && (
-                    <div className="border-t border-slate-800 px-3 pb-3 pt-2 md:hidden">
+                    <div className="border-t border-slate-800 px-3 pb-3 pt-2 lg:hidden">
                         <div className="flex flex-col">
                             {navigation.map((item) => {
                                 const isActive = activeSection === item.id;

@@ -8,6 +8,7 @@ import Experience from "@/sections/Experience";
 import Hero from "@/sections/Hero";
 import Projects from "@/sections/Projects";
 import Skills from "@/sections/Skills";
+import Volunteering from "@/sections/Volunteering";
 
 export default function Home() {
     return (
@@ -22,6 +23,7 @@ export default function Home() {
                 <Projects />
                 <Education />
                 <Certificates />
+                <Volunteering />
                 <Contact />
             </main>
 
