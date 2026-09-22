@@ -5,6 +5,7 @@ export type Project = {
     subtitle: string;
     description: string;
     technologies: string[];
+    highlights: string[];
     github: string;
     featured: boolean;
     icon: ProjectIcon;
