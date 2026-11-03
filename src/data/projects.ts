@@ -51,4 +51,29 @@ export const projects: Project[] = [
         featured: false,
         icon: "security",
     },
+    {
+        title: "Nikolay Vaklev Portfolio",
+        subtitle: "Personal Software Engineering Portfolio",
+        description:
+            "A responsive personal portfolio built to present my software engineering experience, projects, technical skills, education, certifications, and community involvement.",
+        technologies: [
+            "Next.js 16",
+            "React 19",
+            "TypeScript",
+            "Tailwind CSS 4",
+            "Lucide React",
+            "React Icons",
+        ],
+        highlights: [
+            "Responsive single-page portfolio",
+            "Reusable React components",
+            "Responsive desktop and mobile navigation",
+            "SEO metadata and Open Graph support",
+            "Project, experience, education, and certification sections",
+            "Custom dark software engineering interface",
+        ],
+        github: "https://github.com/nikolaychv/nikolay-portfolio",
+        featured: false,
+        icon: "portfolio",
+    },
 ];

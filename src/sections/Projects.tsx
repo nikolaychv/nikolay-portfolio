@@ -1,20 +1,20 @@
 import { projects } from "@/data/projects";
+import type { ProjectIcon } from "@/types/project";
 import {
     Check,
+    Code2,
     ExternalLink,
     ShieldCheck,
     Wrench,
+    type LucideIcon,
 } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
-function getProjectIcon(icon: "automotive" | "security") {
-    switch (icon) {
-        case "automotive":
-            return Wrench;
-        case "security":
-            return ShieldCheck;
-    }
-}
+const projectIcons: Record<ProjectIcon, LucideIcon> = {
+    automotive: Wrench,
+    security: ShieldCheck,
+    portfolio: Code2,
+};
 
 export default function Projects() {
     const featuredProject = projects.find((project) => project.featured);
@@ -38,7 +38,7 @@ export default function Projects() {
             </div>
 
             {featuredProject && (() => {
-                const ProjectIcon = getProjectIcon(featuredProject.icon);
+                const ProjectIconComponent = projectIcons[featuredProject.icon];
 
                 return (
                     <article className="group relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/50 p-6 transition hover:border-slate-700 md:p-10">
@@ -48,7 +48,7 @@ export default function Projects() {
                             <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
                                 <div className="flex items-start gap-5">
                                     <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-sky-500/20 bg-sky-500/10 text-sky-400">
-                                        <ProjectIcon size={30} strokeWidth={1.7} />
+                                        <ProjectIconComponent size={30} strokeWidth={1.7} />
                                     </div>
 
                                     <div>
@@ -131,7 +131,7 @@ export default function Projects() {
             {otherProjects.length > 0 && (
                 <div className="mt-6 grid gap-6 md:grid-cols-2">
                     {otherProjects.map((project) => {
-                        const ProjectIcon = getProjectIcon(project.icon);
+                        const ProjectIconComponent = projectIcons[project.icon];
 
                         return (
                             <article
@@ -140,7 +140,7 @@ export default function Projects() {
                             >
                                 <div className="flex items-start justify-between gap-5">
                                     <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-slate-800 bg-slate-900/60 text-sky-400">
-                                        <ProjectIcon size={26} strokeWidth={1.7} />
+                                        <ProjectIconComponent size={26} strokeWidth={1.7} />
                                     </div>
 
                                     <a

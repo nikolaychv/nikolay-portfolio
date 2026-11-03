@@ -1,5 +1,40 @@
 import Image from "next/image";
 
+const volunteering = [
+    {
+        organization: "AI Stack Conf",
+        role: "Volunteer",
+        category: "Science and Technology",
+        logo: "/images/volunteering/aistackconf.png",
+        description:
+            "Volunteered at AI Stack Conf, a conference exploring artificial intelligence and its impact across different professional fields. Assisted the organizing team with on-site activities, attendee guidance, and general event support, contributing to the successful execution of the conference.",
+    },
+    {
+        organization: "Full Stack Conf",
+        role: "Volunteer",
+        category: "Science and Technology",
+        logo: "/images/volunteering/fullstackconf.png",
+        description:
+            "Contributed as an on-site volunteer at Full Stack Conf, a technology conference focused on full-stack development and modern software engineering. Supported the event organizers with attendee assistance and on-site logistics, helping ensure a smooth and welcoming conference experience.",
+    },
+    {
+        organization: "Data Stack Conf",
+        role: "Volunteer",
+        category: "Science and Technology",
+        logo: "/images/volunteering/datastackconf.jpg",
+        description:
+            "Provided on-site volunteer support during Data Stack Conf, a technology conference focused on modern data infrastructure, assisting the organizing team with attendee coordination and event logistics to ensure smooth operations throughout the conference.",
+    },
+    {
+        organization: "js.talks();",
+        role: "Volunteer",
+        category: "Science and Technology",
+        logo: "/images/volunteering/jstalks.jpg",
+        description:
+            "Provided on-site support during js.talks(), one of the major JavaScript events in Bulgaria, contributing to event logistics and helping ensure smooth operations throughout the day.",
+    },
+];
+
 export default function Volunteering() {
     return (
         <section
@@ -16,44 +51,49 @@ export default function Volunteering() {
                 </h2>
 
                 <p className="mt-5 leading-7 text-slate-400">
-                    Contributing to technology communities and events beyond my
+                    Supporting technology conferences and communities beyond my
                     professional and academic work.
                 </p>
             </div>
 
-            <article className="rounded-2xl border border-slate-800 bg-slate-950/40 p-6 transition hover:border-slate-700 hover:bg-slate-950/70 md:p-8">
-                <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
-                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl border border-slate-800 bg-white p-2">
-                        <Image
-                            src="/images/volunteering/jstalks.jpg"
-                            alt="js.talks() logo"
-                            width={48}
-                            height={48}
-                            className="h-full w-full object-contain"
-                        />
-                    </div>
+            <div className="grid gap-5 md:grid-cols-2">
+                {volunteering.map((experience) => (
+                    <article
+                        key={experience.organization}
+                        className="group rounded-2xl border border-slate-800 bg-slate-950/40 p-6 transition hover:-translate-y-1 hover:border-slate-700 hover:bg-slate-950/70 md:p-7"
+                    >
+                        <div className="flex items-start gap-5">
+                            <div className="flex h-16 w-24 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 p-2">
+                                <Image
+                                    src={experience.logo}
+                                    alt={`${experience.organization} logo`}
+                                    width={80}
+                                    height={52}
+                                    className="h-full w-full object-contain"
+                                />
+                            </div>
 
-                    <div className="max-w-3xl">
-                        <h3 className="text-xl font-semibold text-white md:text-2xl">
-                            Volunteer
-                        </h3>
+                            <div className="min-w-0">
+                                <h3 className="text-lg font-semibold text-white">
+                                    {experience.role}
+                                </h3>
 
-                        <p className="mt-1 text-base text-sky-400">
-                            js.talks();
-                        </p>
+                                <p className="mt-1 text-base font-medium text-sky-400">
+                                    {experience.organization}
+                                </p>
 
-                        <p className="mt-2 text-sm text-slate-500">
-                            Science and Technology
-                        </p>
+                                <p className="mt-2 text-sm text-slate-500">
+                                    {experience.category}
+                                </p>
+                            </div>
+                        </div>
 
                         <p className="mt-6 leading-7 text-slate-400">
-                            Provided on-site support during js.talks(), one of the major
-                            JavaScript events in Bulgaria, contributing to event logistics
-                            and helping ensure smooth operations throughout the day.
+                            {experience.description}
                         </p>
-                    </div>
-                </div>
-            </article>
+                    </article>
+                ))}
+            </div>
         </section>
     );
 }

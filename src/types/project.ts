@@ -1,4 +1,4 @@
-export type ProjectIcon = "automotive" | "security";
+export type ProjectIcon = "automotive" | "security" | "portfolio";
 
 export type Project = {
     title: string;
