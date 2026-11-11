@@ -2,6 +2,12 @@ import Image from "next/image";
 
 const certificates = [
     {
+        title: "Azure Essentials",
+        issuer: "Software University (SoftUni)",
+        date: "Nov 2026",
+        logo: "/images/certificates/softuni.png",
+    },
+    {
         title: "Linux System Administration",
         issuer: "Software University (SoftUni)",
         date: "Oct 2026",
@@ -104,8 +110,9 @@ export default function Certificates() {
 
                 <p className="mt-5 leading-7 text-slate-400">
                     Certifications and professional training across software development,
-                    artificial intelligence, cybersecurity, business analysis, Agile
-                    methodologies, quality assurance, data, and system administration.
+                    cloud technologies, artificial intelligence, cybersecurity, business
+                    analysis, Agile methodologies, quality assurance, data, and system
+                    administration.
                 </p>
             </div>
 

@@ -1,34 +1,29 @@
-import { MapPin } from "lucide-react";
+import { Cloud, MapPin } from "lucide-react";
 import type { IconType } from "react-icons";
-import { FaAws, FaDocker, FaGithub, FaJava, FaLinkedin } from "react-icons/fa";
-import { SiPostgresql, SiSpringboot } from "react-icons/si";
+import {
+    FaAws,
+    FaDocker,
+    FaGithub,
+    FaJava,
+    FaLinkedin,
+} from "react-icons/fa";
+import {
+    SiPostgresql,
+    SiSpringboot,
+} from "react-icons/si";
 
 type Technology = {
     name: string;
-    icon: IconType;
+    icon: IconType | typeof Cloud;
 };
 
 const technologies: Technology[] = [
-    {
-        name: "Java",
-        icon: FaJava,
-    },
-    {
-        name: "Spring Boot",
-        icon: SiSpringboot,
-    },
-    {
-        name: "PostgreSQL",
-        icon: SiPostgresql,
-    },
-    {
-        name: "Docker",
-        icon: FaDocker,
-    },
-    {
-        name: "AWS",
-        icon: FaAws,
-    },
+    { name: "Java", icon: FaJava },
+    { name: "Spring Boot", icon: SiSpringboot },
+    { name: "PostgreSQL", icon: SiPostgresql },
+    { name: "Docker", icon: FaDocker },
+    { name: "Microsoft Azure", icon: Cloud },
+    { name: "AWS", icon: FaAws },
 ];
 
 export default function Hero() {

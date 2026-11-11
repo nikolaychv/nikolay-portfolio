@@ -1,3 +1,4 @@
+import { Cloud } from "lucide-react";
 import type { IconType } from "react-icons";
 import { FaAws, FaDocker, FaJava } from "react-icons/fa";
 import {
@@ -9,7 +10,7 @@ import {
     SiSpringboot,
 } from "react-icons/si";
 
-const technologyIcons: Record<string, IconType> = {
+const technologyIcons: Record<string, IconType | typeof Cloud> = {
     Java: FaJava,
     "Spring Framework": SiSpring,
     "Spring Boot": SiSpringboot,
@@ -17,6 +18,7 @@ const technologyIcons: Record<string, IconType> = {
     Docker: FaDocker,
     Kubernetes: SiKubernetes,
     AWS: FaAws,
+    "Microsoft Azure": Cloud,
     Jenkins: SiJenkins,
     Postman: SiPostman,
 };
@@ -25,7 +27,8 @@ const skillGroups = [
     {
         number: "01",
         title: "Backend",
-        description: "Backend development and enterprise application architecture.",
+        description:
+            "Backend development and enterprise application architecture.",
         skills: [
             "Java",
             "Spring Framework",
@@ -38,7 +41,8 @@ const skillGroups = [
     {
         number: "02",
         title: "Databases",
-        description: "Relational databases, persistence, and schema management.",
+        description:
+            "Relational databases, persistence, and schema management.",
         skills: [
             "PostgreSQL",
             "Oracle Database",
@@ -49,19 +53,22 @@ const skillGroups = [
     {
         number: "03",
         title: "Cloud & DevOps",
-        description: "Containerization, deployment, CI/CD, and cloud environments.",
+        description:
+            "Containerization, deployment, CI/CD, and cloud environments.",
         skills: [
             "Docker",
             "Kubernetes",
             "Helm",
             "AWS",
+            "Microsoft Azure",
             "Jenkins",
         ],
     },
     {
         number: "04",
         title: "Testing",
-        description: "Automated testing and API verification.",
+        description:
+            "Automated testing and API verification.",
         skills: [
             "Unit Testing",
             "JUnit",
@@ -74,7 +81,8 @@ const skillGroups = [
     {
         number: "05",
         title: "Security",
-        description: "Authentication and authorization technologies and concepts.",
+        description:
+            "Authentication and authorization technologies and concepts.",
         skills: [
             "JWT",
             "OAuth2",
@@ -84,7 +92,8 @@ const skillGroups = [
     {
         number: "06",
         title: "Integration",
-        description: "Backend services and enterprise system integrations.",
+        description:
+            "Backend services and enterprise system integrations.",
         skills: [
             "RESTful Web Services",
             "SOAP",
